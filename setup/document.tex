@@ -4,9 +4,9 @@
 
 % page geometry (bind correction is 4mm)
 \ifthenelse{\equal{\bindcorrection}{yes}}{
-	\newgeometry{twoside,includeheadfoot,top=16mm,bottom=16mm,inner=28mm,outer=20mm}
+    \newgeometry{twoside,includeheadfoot,top=16mm,bottom=16mm,inner=28mm,outer=20mm}
 }{
-	\newgeometry{twoside,includeheadfoot,top=16mm,bottom=16mm,inner=24mm,outer=24mm}
+    \newgeometry{twoside,includeheadfoot,top=16mm,bottom=16mm,inner=24mm,outer=24mm}
 }
 
 % line spread in text
@@ -43,14 +43,14 @@
 
 % optinally adds an empty page between chapters to ensure that new chapters allways start on odd pages
 \newcommand{\pageshift}{
-	\clearpage
-	\newpage
-	\ifodd
-		\thepage
-	\else
-		\null
-		\newpage
-	\fi
+    \clearpage
+    \newpage
+    \ifodd
+        \thepage
+    \else
+        \null
+        \newpage
+    \fi
 }
 
 
@@ -73,58 +73,58 @@
 
 % custom section
 \newcommand{\Section}[2][]{
-	\setcounter{subsection}{0}
-	\setcounter{figure}{0}
-	\setcounter{table}{0}
-	\setcounter{equation}{0}
-	\refstepcounter{section}
-	\section*{\thesection\hspace{\secsep}#2}
-	\ifthenelse{\equal{#1}{}}{
-		\addcontentsline{toc}{section}{\thesection\hspace{\secsep}#2}
-	}{
-		\addcontentsline{toc}{section}{\thesection\hspace{\secsep}\texorpdfstring{#2}{#1}}
-	}
-	\sectionmark{#2}
+    \setcounter{subsection}{0}
+    \setcounter{figure}{0}
+    \setcounter{table}{0}
+    \setcounter{equation}{0}
+    \refstepcounter{section}
+    \section*{\thesection\hspace{\secsep}#2}
+    \ifthenelse{\equal{#1}{}}{
+        \addcontentsline{toc}{section}{\thesection\hspace{\secsep}#2}
+    }{
+        \addcontentsline{toc}{section}{\thesection\hspace{\secsep}\texorpdfstring{#2}{#1}}
+    }
+    \sectionmark{#2}
 }
 
 % custom subsection
 \newcommand{\Subsection}[2][]{
-	\setcounter{subsubsection}{0}
-	\refstepcounter{subsection}
-	\subsection*{\thesubsection\hspace{\secsep}#2}
-	\ifthenelse{\equal{#1}{}}{
-		\addcontentsline{toc}{subsection}{\thesubsection\hspace{\secsep}#2}
-	}{
-		\addcontentsline{toc}{subsection}{\thesubsection\hspace{\secsep}\texorpdfstring{#2}{#1}}
-	}
-	\subsectionmark{#2}
+    \setcounter{subsubsection}{0}
+    \refstepcounter{subsection}
+    \subsection*{\thesubsection\hspace{\secsep}#2}
+    \ifthenelse{\equal{#1}{}}{
+        \addcontentsline{toc}{subsection}{\thesubsection\hspace{\secsep}#2}
+    }{
+        \addcontentsline{toc}{subsection}{\thesubsection\hspace{\secsep}\texorpdfstring{#2}{#1}}
+    }
+    \subsectionmark{#2}
 }
 
 % custom subsubsection
 \newcommand{\Subsubsection}[2][]{
-	\refstepcounter{subsubsection}
-	\subsubsection*{\thesubsubsection\hspace{\secsep}#2}
-	\ifthenelse{\equal{#1}{}}{
-		\addcontentsline{toc}{subsubsection}{\thesubsubsection\hspace{\secsep}#2}
-	}{
-		\addcontentsline{toc}{subsubsection}{\thesubsubsection\hspace{\secsep}\texorpdfstring{#2}{#1}}
-	}
-	\subsubsectionmark{#2}
+    \refstepcounter{subsubsection}
+    \subsubsection*{\thesubsubsection\hspace{\secsep}#2}
+    \ifthenelse{\equal{#1}{}}{
+        \addcontentsline{toc}{subsubsection}{\thesubsubsection\hspace{\secsep}#2}
+    }{
+        \addcontentsline{toc}{subsubsection}{\thesubsubsection\hspace{\secsep}\texorpdfstring{#2}{#1}}
+    }
+    \subsubsectionmark{#2}
 }
 
 % custom, unnumbered section
 \newcommand{\UnnumberedSection}[2][]{
-	\setcounter{subsection}{0}
-	\setcounter{figure}{0}
-	\setcounter{table}{0}
-	\setcounter{equation}{0}
-	\refstepcounter{section}
-	\phantomsection
-	\section*{#2}
-	\ifthenelse{\equal{#1}{}}{
-		\addcontentsline{toc}{section}{#2}
-	}{
-		\addcontentsline{toc}{section}{\texorpdfstring{#2}{#1}}
-	}
-	\sectionmark{#2}
+    \setcounter{subsection}{0}
+    \setcounter{figure}{0}
+    \setcounter{table}{0}
+    \setcounter{equation}{0}
+    \refstepcounter{section}
+    \phantomsection
+    \section*{#2}
+    \ifthenelse{\equal{#1}{}}{
+        \addcontentsline{toc}{section}{#2}
+    }{
+        \addcontentsline{toc}{section}{\texorpdfstring{#2}{#1}}
+    }
+    \sectionmark{#2}
 }
