@@ -49,7 +49,7 @@ Export the citation in BibTeX format and add it to your .bib files.
 
 Including the DOI in your references is optional. You can mark it with an "x" if you choose not to include it.
 
-## Page Shift and New Page
+### Page Shift and New Page
 
 In `content/index.tex`, use `\newpage` to start a new page for each section, or `\pageshift` to ensure new sections start on the desired page (even or odd). 
 
